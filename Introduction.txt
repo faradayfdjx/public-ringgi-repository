@@ -1,0 +1,7 @@
+Hii, it's me, Ringgi
+
+Welcome to my small repository, here i attach my work on selenium automation script,
+this is just a sample from my self-learning of selenium python, it's not perfect tho, 
+but i intend to make it better along the times.
+
+Thank you,..
