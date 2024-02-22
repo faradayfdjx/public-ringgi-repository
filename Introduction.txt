@@ -4,4 +4,6 @@ Welcome to my small repository, here i attach my work on selenium automation scr
 this is just a sample from my self-learning of selenium python, it's not perfect tho, 
 but i intend to make it better along the times.
 
-Thank you,..
+This repository is an example of my work, which i used on login page of saucedemo website,
+Build from self test cases and implemented to automation scripts using python selenium webdriver,
+Feel free to get, thank you,..
