@@ -8,7 +8,7 @@ public class global_variable {
     static final String login_button = "//*[@id='login-button']";
     static final String uname_credential = "//*[@id='login_credentials']";
     static final String pass_credential = "//*[@id='root']/div/div[2]/div[2]/div/div[2]";
-
+    static final String atc_url = "https://www.saucedemo.com/inventory.html";
     static final String username_one = "standard_user";
     static final String username_two = "locked_out_user";
     static final String username_three = "problem_user";
