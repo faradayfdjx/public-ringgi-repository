@@ -6,48 +6,48 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-public class test_do_login {
-    private String passwVal = global_variable.password_val;
+public class test_empty_passw {
     private String userVal = global_variable.username_one;
     private String usernameLocator = global_variable.username;
     private String passwordLocator = global_variable.password;
     private String loginLocator = global_variable.login_button;
-
-    private String thisUrl = global_variable.atc_url;
+    private String fail_container = global_variable.fail_container;
     private WebDriver driver;
     private WebDriverWait wait;
+    private String cta_text = "Epic sadface: Password is required";
 
-    public test_do_login(){
+    public test_empty_passw(){
         driver = new FirefoxDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(3));
     }
 
     public static void main(String[] args) {
-        test_do_login tdl = new test_do_login();
-        tdl.do_login();
+        test_empty_passw tep = new test_empty_passw();
+        tep.empty_passw();
     }
 
-    public Boolean do_login(){
+    public Boolean empty_passw(){
         Boolean result = false;
         driver.get("https://saucedemo.com");
 
         try {
             WebElement uname = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(usernameLocator)));
-            WebElement passw = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(passwordLocator)));
             WebElement login = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(loginLocator)));
 
+            String thisUrl = driver.getCurrentUrl();
             uname.sendKeys(userVal);
-            passw.sendKeys(passwVal);
             login.click();
 
-            String currentUrl = driver.getCurrentUrl();
-
-            if (currentUrl.equals(thisUrl)){
-                System.out.println("Url Expected, Finish with succeed!");
+            WebElement fail_cont = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(fail_container)));
+            String cont_cta = fail_cont.getAttribute("textContent");
+            Boolean assertionResult = cont_cta.equals(cta_text);
+            // String res = assertionResult.toString();
+            if (assertionResult){
+                System.out.println("Fail happen as expected, success!");
                 result = true;
             }
             else {
-                System.out.println("Url Not Expected, Finish with failed!");
+                System.out.println("Fail not happen as expected, failed!");
                 result = false;
             }
         } catch (TimeoutException e) {
