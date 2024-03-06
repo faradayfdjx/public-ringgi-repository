@@ -16,7 +16,7 @@ username_locator = (By.ID, global_variable.username)
 password_locator = (By.ID, global_variable.password)
 login_button_locator = (By.XPATH, global_variable.login_button)
 
-user_val = global_variable.username_one
+user_val = global_variable.username_two
 pass_val = global_variable.password_val
 
 fail_cont = (By.XPATH, global_variable.fail_container)
