@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
 import sys
-sys.path.append('C:/Users/ringgo.atmojo/Documents/GitRepository/Selenium/Saucedemo')
+sys.path.append('C:/Users/Admin/Documents/selenium/Python')
 import  global_variable
 
 # Define driver globally
